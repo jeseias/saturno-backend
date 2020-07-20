@@ -9,7 +9,6 @@ router.post('/login', authController.login);
 router.post('/forgotPassword', authController.forgotPassword);
 router.patch('/resetPassword/:token', authController.resetPassword);
 
-
 // Clientes
 router.use(authController.protect);
 router.patch('/updateMyPassword', (req, res, next) => {console.log(req.user.id);  next()}, authController.updatePassword);
@@ -20,6 +19,7 @@ router.patch(
   userController.updateMe
 );
 router.get('/me', userController.getMe, userController.getUser);
+router.get('/dashboard', userController.getMe, userController.dashboard);
 
 // Admin managin users
 router.use(authController.restrictTo('admin'));

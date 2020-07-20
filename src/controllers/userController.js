@@ -4,6 +4,7 @@ const Factory = require('./handlerFactory');
 const upload = require('../utils/upload');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
+const Review = require('../models/reviewModel');
 
 const filterObj = (obj, ...allowedFields) => {
   const newObject = {};
@@ -40,8 +41,20 @@ exports.resizeUserPhoto = catchAsync(async (req, res, next) => {
 // Cliente user
 exports.getMe = (req, res, next) => {
   req.params.id = req.user.id;
+
   next();
 };
+
+exports.dashboard = catchAsync(async (req, res, next) => {
+  const userReview = await Review.find({ user: req.user.id });
+
+  return res.status(200).json({
+    status: 'success',
+    data: { 
+      userReview: userReview[0]
+    }
+  })
+});
 
 exports.updateMe = catchAsync(async (req, res, next) => {
   const { password, passwordConfirm } = req.body;
