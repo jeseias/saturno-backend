@@ -82,6 +82,6 @@ exports.updateMe = catchAsync(async (req, res, next) => {
 
 // Only for admins
 exports.getUser = Factory.getOne(User);
-exports.getAllUsers = Factory.getAll(User, {  });
+exports.getAllUsers = Factory.getAll(User);
 exports.updateUser = Factory.updateOne(User);
 exports.deleteUser = Factory.deleteOne(User);

@@ -36,7 +36,7 @@ exports.adminAll = Factory.getAll(Review);
 exports.adminUpdate = Factory.updateOne(Review);
 
 exports.createOne = Factory.createOne(Review);
-exports.getAll = Factory.getAll(Review, {visible: { $ne: false }});
+exports.getAll = Factory.getAll(Review); // {visible: { $ne: false }}
 exports.getOne = Factory.getOne(Review);
 exports.updateOne = Factory.updateOne(Review);
 exports.deleteOne = Factory.deleteOne(Review);

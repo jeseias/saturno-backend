@@ -30,6 +30,6 @@ exports.resizeServicePhoto = catchAsync(async (req, res, next) => {
 
 exports.createService = Factory.createOne(Service);
 exports.getOne = Factory.getOne(Service);
-exports.getAll = Factory.getAll(Service, {  });
+exports.getAll = Factory.getAll(Service);
 exports.updateOne = Factory.updateOne(Service);
 exports.deleteOne = Factory.deleteOne(Service);
