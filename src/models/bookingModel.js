@@ -19,7 +19,7 @@ const BookingSchema = new mongoose.Schema({
 BookingSchema.pre(/^find/, function(next) {
   this.populate({
     path: 'user',
-    select: '-__v  -passwordChangedAt -role -phone -email'
+    select: '-__v  -passwordChangedAt -role'
   });
 
   next();

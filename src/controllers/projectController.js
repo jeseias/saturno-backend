@@ -32,6 +32,7 @@ exports.projectUpload = catchAsync(async (req, res, next) => {
       req.body.images.push(filename);
     })
   );  
+
   next();
 });
 
@@ -44,6 +45,6 @@ exports.projectTechs = catchAsync(async (req, res, next) => {
 
 exports.createProject = Factory.createOne(Project);
 exports.getProject = Factory.getOne(Project);
-exports.getAllProjects = Factory.getAll(Project, {  });
+exports.getAllProjects = Factory.getAll(Project);
 exports.deleteProject = Factory.deleteOne(Project);
 exports.updateProject = Factory.updateOne(Project);

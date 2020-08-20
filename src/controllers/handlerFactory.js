@@ -1,5 +1,6 @@
 const AppError = require('../utils/appError');
 const catchAsync = require('../utils/catchAsync');
+const APIFeatures = require('../utils/apifeatures');
 
 exports.createOne = Model =>
   catchAsync(async (req, res, next) => {
@@ -13,9 +14,12 @@ exports.createOne = Model =>
     });
   });
 
-exports.getAll = (Model, filter) => 
+exports.getAll = (Model) => 
   catchAsync(async (req, res, next) => {
-    const docs = await Model.find(filter).select('-__v');
+    const features = new APIFeatures(Model.find(), req.query)
+      .filter()
+      .sort()
+    const docs = await features.query;
 
     res.status(200).json({
       status: 'success',

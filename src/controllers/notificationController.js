@@ -34,7 +34,7 @@ exports.sendNotification = catchAsync(async (req, res, next) => {
   next();
 });
 
-exports.getNotifications = Factory.getAll(Notification, {  });
+exports.getNotifications = Factory.getAll(Notification);
 exports.getNotification = Factory.getOne(Notification);
 exports.updateNotification = Factory.updateOne(Notification);
 exports.deleteNotification = Factory.deleteOne(Notification);
