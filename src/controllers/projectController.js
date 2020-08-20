@@ -13,7 +13,7 @@ exports.uploadProjectMedia = upload.fields([
 
 exports.projectUpload = catchAsync(async (req, res, next) => { 
   // Cover photo
-  req.body.imageCover = `projec-${req.body.name}-cover-${Date.now()}.jpg`;
+  req.body.imageCover = `project-${req.body.name}-cover-${Date.now()}.jpg`;
   await sharp(req.files.imageCover[0].buffer)
     .toFormat('jpeg')
     .jpeg({ quality: 90 })
@@ -32,6 +32,7 @@ exports.projectUpload = catchAsync(async (req, res, next) => {
       req.body.images.push(filename);
     })
   );  
+
   next();
 });
 
