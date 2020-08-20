@@ -16,7 +16,7 @@ router.post('/',
   reviewController.createOne
 );
 
-router.use(authController.restrictTo('client'));
+router.use(authController.restrictTo('client', 'admin'));
 
 router
   .route('/:id')

@@ -11,9 +11,9 @@ exports.uploadProjectMedia = upload.fields([
   { name: 'video', maxCount: 1 }
 ]);
 
-exports.projectUpload = catchAsync(async (req, res, next) => { 
+exports.projectUpload = catchAsync(async (req, res, next) => {  
   // Cover photo
-  req.body.imageCover = `projec-${req.body.name}-cover-${Date.now()}.jpg`;
+  req.body.imageCover = `project-${req.body.name}-cover-${Date.now()}.jpg`;
   await sharp(req.files.imageCover[0].buffer)
     .toFormat('jpeg')
     .jpeg({ quality: 90 })
