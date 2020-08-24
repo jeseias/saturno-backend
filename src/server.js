@@ -10,8 +10,8 @@ process.on('uncaughtException', err => {
 });
 
 // Enviroment configuration file
-dotenv.config({ path: path.resolve(__dirname, '..', '..', '.config.env'), });
-const app = require("../app");
+dotenv.config({ path: path.resolve(__dirname, '..', '.config.env'), });
+const app = require("./app");
 
 // Connnecting to the data
 mongoose

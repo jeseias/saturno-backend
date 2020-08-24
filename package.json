@@ -2,12 +2,12 @@
   "name": "jmcd-backend",
   "version": "1.0.0",
   "description": "minha api pessoal",
-  "main": "src/server/index.js",
+  "main": "src/server.js",
   "author": "jeseias domingos",
   "license": "MIT",
   "scripts": {
     "dev": "nodemon",
-    "start": "node src/server/index.js"
+    "start": "node src/server.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
