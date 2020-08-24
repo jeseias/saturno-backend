@@ -17,15 +17,27 @@ router
 router
   .route('/:id')
   .get(projectController.getProject)
-  .patch(
-    authController.protect, 
-    authController.restrictTo('admin'), 
+
+router.use(
+  authController.protect, 
+  authController.restrictTo('admin'),
+)
+
+router
+  .route('/:id')
+  .patch( 
+    projectController.uploadProjectMedia,
+    projectController.projectUpload,
+    projectController.projectTechs,
     projectController.updateProject
   )
-  .delete(
-    authController.protect, 
-    authController.restrictTo('admin'), 
+  .delete(  
     projectController.deleteProject
   );
+
+router.patch('/content/:id',  
+  projectController.projectTechs,
+  projectController.updateProject
+)
 
 module.exports = router;

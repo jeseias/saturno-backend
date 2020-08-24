@@ -12,32 +12,40 @@ exports.uploadProjectMedia = upload.fields([
 ]);
 
 exports.projectUpload = catchAsync(async (req, res, next) => {  
+  const name = req.body.name.replace(' ', '').trim().toLowerCase()
+
   // Cover photo
-  req.body.imageCover = `project-${req.body.name}-cover-${Date.now()}.jpg`;
-  await sharp(req.files.imageCover[0].buffer)
-    .toFormat('jpeg')
-    .jpeg({ quality: 90 })
-    .toFile(`public/img/projects/${req.body.imageCover}`);
+  if (req.files.imageCover) {
+    req.body.imageCover = `project-${name}-cover-${Date.now()}.jpg`;
+    await sharp(req.files.imageCover[0].buffer)
+      .toFormat('jpeg')
+      .jpeg({ quality: 90 })
+      .toFile(`public/img/projects/${req.body.imageCover}`);
+  }
 
   // All projects images
-  req.body.images = [];
-  await Promise.all(
-    req.files.images.map(async (file, i) => {
-      const filename = `project-${req.body.name}-${Date.now()}-${i+1}.jpg`;
-      await sharp(file.buffer)
-        .toFormat('jpeg')
-        .jpeg({ quality: 90 })
-        .toFile(`public/img/projects/${filename}`);
-
-      req.body.images.push(filename);
-    })
-  );  
+  if (req.files.images) {
+    req.body.images = [];
+    await Promise.all(
+      req.files.images.map(async (file, i) => {
+        const filename = `project-${name}-${Date.now()}-${i+1}.jpg`;
+        await sharp(file.buffer)
+          .toFormat('jpeg')
+          .jpeg({ quality: 90 })
+          .toFile(`public/img/projects/${filename}`);
+        console.log('ok')
+        req.body.images.push(filename);
+      })
+    );  
+  }
 
   next();
 });
 
 exports.projectTechs = catchAsync(async (req, res, next) => {
   const { techs } = req.body;
+
+  if (!techs) return next()
   req.body.techs = techs.split(', ');
 
   next();
