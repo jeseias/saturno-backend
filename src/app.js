@@ -24,6 +24,12 @@ app.use((req, res, next) => {
 });
 
 // Routes
+app.get('/', (req, res) => {
+  res.status(200).json({
+    status: 'success',
+    message: 'Seje bem-vindo a aplicação Saturno'
+  })
+})
 app.use('/api/v1/users', require('./routes/userRoutes'));
 app.use('/api/v1/projects', require('./routes/projectRoutes'));
 app.use('/api/v1/messages', require('./routes/messageRoutes'));
