@@ -57,7 +57,7 @@ const UserSchema = mongoose.Schema({
 
 // Vitual properties
 UserSchema.virtual('img__url').get(function() {
-  return `http://127.0.0.1:${process.env.PORT}/api/v1/files/img/users/${this.photo}`;
+  return `${process.env.LOCATION}${process.env.PORT}/api/v1/files/img/users/${this.photo}`;
 });
 
 // Encrypt my password
