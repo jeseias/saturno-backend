@@ -10,7 +10,7 @@ const ProjectSchema = new mongoose.Schema({
   nature: {
     type: String,
     required: [true, 'Projecto deve ter um tipo'],
-    enum: ['web', 'mobile', 'desktop', 'api']
+    enum: ['web', 'mobile', 'desktop', 'img']
   },
   imageCover: {
     type: String,
@@ -29,7 +29,6 @@ const ProjectSchema = new mongoose.Schema({
     }
   },
   link: String,
-  video: String,
   images: [String],
   techs: [String]
 }, {

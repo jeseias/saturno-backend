@@ -7,7 +7,7 @@ const catchAsync = require('../utils/catchAsync');
 
 exports.uploadProjectMedia = upload.fields([
   { name: 'imageCover', maxCount: 1 },
-  { name: 'images', maxCount: 6 },
+  { name: 'images', maxCount: 12 },
   { name: 'video', maxCount: 1 }
 ]);
 
@@ -31,9 +31,8 @@ exports.projectUpload = catchAsync(async (req, res, next) => {
         const filename = `project-${name}-${Date.now()}-${i+1}.jpg`;
         await sharp(file.buffer)
           .toFormat('jpeg')
-          .jpeg({ quality: 90 })
+          .jpeg({ quality: 95 })
           .toFile(`public/img/projects/${filename}`);
-        console.log('ok')
         req.body.images.push(filename);
       })
     );  

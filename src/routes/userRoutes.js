@@ -21,6 +21,8 @@ router.patch(
 router.get('/me', userController.getMe, userController.getUser);
 router.get('/dashboard', userController.getMe, userController.dashboard);
 
+router.delete('/deleteMe', userController.deleteMe);
+
 // Admin managin users
 router.use(authController.restrictTo('admin'));
 router  

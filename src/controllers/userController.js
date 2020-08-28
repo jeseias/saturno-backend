@@ -20,14 +20,16 @@ const filterObj = (obj, ...allowedFields) => {
 exports.uploadUserPhoto = upload.single('photo');
 
 exports.resizeUserPhoto = catchAsync(async (req, res, next) => {
-  if (!req.file) return next(); 
+  const { user, file } = req
+  if (!file) return next(); 
 
-  if (!req.file.mimetype.startsWith('image'))
+  if (!file.mimetype.startsWith('image'))
     return next(
       new AppError('So podes fazer upload de uma imagen', 400)
     );
 
-  req.file.filename = `user-${req.user._id}-${Date.now()}.jpeg`;
+  file.filename = `user-${user._id}-${Date.now()}.jpeg`;
+  await User.findByIdAndUpdate(user._id, { photo: file.filename })  
 
   await sharp(req.file.buffer)
     .resize(400, 400)
@@ -66,7 +68,7 @@ exports.updateMe = catchAsync(async (req, res, next) => {
 
   const filteredBody = filterObj(req.body, 'name', 'email', 'phone');
   if (req.file) filteredBody.photo = req.file.filename;
-  console.log(filteredBody)
+
   const updatedUser = await User.findByIdAndUpdate(req.user._id, filteredBody, {
     new: true,
     runValidators: true
@@ -79,6 +81,15 @@ exports.updateMe = catchAsync(async (req, res, next) => {
     }
   });
 });
+
+exports.deleteMe = catchAsync(async (req, res, next) => {
+  await User.findByIdAndDelete(req.user._id);
+
+  res.status(204).json({
+    status: 'success',
+    message: 'Eliminando com successo'
+  });
+})
 
 // Only for admins
 exports.getUser = Factory.getOne(User);

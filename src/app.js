@@ -38,7 +38,7 @@ app.use('/api/v1/bookings', require('./routes/bookingRoutes'));
 app.use('/api/v1/reviews', require('./routes/reviewRoutes'));
 app.use('/api/v1/services', require('./routes/serviceRoutes'));
 
-app.use('/api/v1/files/', express.static(path.resolve(__dirname, 'public')))
+app.use('/api/v1/files/', express.static(path.resolve(__dirname, '..', 'public')))
 
 // App Error handler
 app.all('*', (req, res, next) => {
