@@ -13,11 +13,22 @@ router.post('/',
   serviceController.uploadServicePhoto,
   serviceController.resizeServicePhoto,
   serviceController.createService,
-);
+); 
+
+router.route('/img/:id') 
+  .patch( 
+    serviceController.deleteImages,
+    serviceController.uploadServicePhoto,
+    serviceController.resizeServicePhoto,
+    serviceController.updateOne
+  );
 
 router.route('/:id') 
   .get(serviceController.getOne)
   .patch(serviceController.updateOne)
-  .delete(serviceController.deleteOne);
+  .delete(
+    serviceController.deleteImages,
+    serviceController.deleteOne
+  );
   
 module.exports = router;

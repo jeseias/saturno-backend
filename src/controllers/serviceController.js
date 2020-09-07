@@ -1,3 +1,4 @@
+const fs = require('fs')
 const sharp = require('sharp');
 const Service = require('../models/serviceModel');
 const Factory = require('./handlerFactory');
@@ -27,6 +28,19 @@ exports.resizeServicePhoto = catchAsync(async (req, res, next) => {
 
   next();
 });
+
+exports.deleteImages = catchAsync(async (req, res, next) => {
+  const { id } = req.params;
+  const service = await Service.findById(id)
+
+  const imgName = service.photo
+  console.log({ imgName, id })
+  console.log(service)
+
+  fs.unlink(`public/img/allservices/${imgName}`, () => {
+    next()
+  })
+})
 
 exports.createService = Factory.createOne(Service);
 exports.getOne = Factory.getOne(Service);
