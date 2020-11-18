@@ -41,7 +41,11 @@ const ProjectSchema = new mongoose.Schema({
 }); 
 
 ProjectSchema.virtual('project__img').get(function() {
-  return `${process.env.LOCATION}${process.env.PORT}/api/v1/files/img/projects/${this.imageCover}`;
+  const dev = false 
+    ? `${process.env.LOCATION}${process.env.PORT}/api/v1/files/img/projects/${this.imageCover}`
+    : `${process.env.LOCATION}/api/v1/files/img/projects/${this.imageCover}`;
+
+  return dev;
 });
 
 ProjectSchema.virtual('all__images').get(function() {

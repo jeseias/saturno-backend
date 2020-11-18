@@ -1,0 +1,11 @@
+[{
+  "name": "Genda",
+  "nature": "web",
+  "techs": "Pug, SASS, Typescript",
+  "link": "https://jeseias.github/genda",
+  "summary": "Gestor financeiro",
+  "description": "Esta aplicação foi desenvolvida para ajudar individos ou familias a terem mais controle da entrada e saido do dinheiro",
+  "images": ["project-genda-1598911638993-1.jpg", "project-genda-1598911638993-2.jpg", "project-genda-1598911638998-5.jpg",
+  "project-genda-1598911638999-6.jpg", "project-genda-1598911638999-7.jpg"],
+  "imageCover": "project-genda-1598911638993-1.jpg"
+}]
