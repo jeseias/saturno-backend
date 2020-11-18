@@ -25,7 +25,11 @@ const ServiceSchema =  new mongoose.Schema({
 
 // Vitual properties
 ServiceSchema.virtual('img__url').get(function() {
-  return `http://127.0.0.1:${process.env.PORT}/api/v1/files/img/allservices/${this.photo}`;
+  const dev = false 
+    ? `${process.env.LOCATION}:${process.env.PORT}/api/v1/files/img/allservices/${this.photo}`
+    : `${process.env.LOCATION}/api/v1/files/img/allservices/${this.photo}`
+    
+  return dev;
 });
 
 const Service = mongoose.model('Service', ServiceSchema);
