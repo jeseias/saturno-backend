@@ -1,4 +1,5 @@
-[{
+[
+  {
   "name": "Genda",
   "nature": "web",
   "techs": "Pug, SASS, Typescript",
@@ -8,4 +9,86 @@
   "images": ["project-genda-1598911638993-1.jpg", "project-genda-1598911638993-2.jpg", "project-genda-1598911638998-5.jpg",
   "project-genda-1598911638999-6.jpg", "project-genda-1598911638999-7.jpg"],
   "imageCover": "project-genda-1598911638993-1.jpg"
-}]
+  },
+  {
+    "name": "Info Tech",
+    "nature": "web",
+    "techs": "Pug, SASS",
+    "link": "https://jeseias.github/infotech",
+    "summary": "Serve para divulgar trabalho",
+    "description": "Este tipo de site é para trabalhadores anonimos poderem divulgar os seus trabalhos",
+    "images": ["project-infotech-1598912641064-1.jpg", "project-infotech-1598912641064-2.jpg", "project-infotech-1598912641065-3.jpg"],
+    "imageCover": "project-infotech-1598912641064-1.jpg"
+  },
+  {
+    "name": "Jeseias Domingos",
+    "nature": "web",
+    "techs": "ReactJS, MongoDB, NodeJS",
+    "link": "https://jeseias.github/jeseiasdomingos",
+    "summary": "Serve para divulgar trabalho",
+    "description": "Este tipo de site é para trabalhadores anonimos poderem divulgar os seus trabalhos",
+    "images": ["project-jmcd-1598912940747-1.jpg", "project-jmcd-1598912940747-2.jpg", "project-jmcd-1598912940748-3.jpg", 
+    "project-jmcd-1598912940748-4.jpg", "project-jmcd-1598912940748-5.jpg", "project-jmcd-1598912940749-6.jpg"],
+    "imageCover": "project-jmcd-1598912940747-1.jpg"
+  },
+  {
+    "name": "Minha Casa",
+    "nature": "web",
+    "techs": "ReactJS, MongoDB, NodeJS",
+    "link": "https://minhacasa.netlify.app",
+    "summary": "Serve para divulgar trabalho",
+    "description": "Este tipo de site é para trabalhadores anonimos poderem divulgar os seus trabalhos",
+    "images": ["project-minhacasa-1598911388683-1.jpg", "project-minhacasa-1598911388683-2.jpg", "project-minhacasa-1598911388683-3.jpg", 
+    "project-minhacasa-1598911388683-4.jpg", "project-minhacasa-1598911388684-5.jpg", "project-minhacasa-1598911388684-6.jpg"],
+    "imageCover": "project-minhacasa-1598911388683-1.jpg"
+  },
+  {
+    "name": "Natours",
+    "nature": "web",
+    "techs": "ReactJS, MongoDB, NodeJS",
+    "link": "https://minhacasa.netlify.app",
+    "summary": "Serve para divulgar trabalho",
+    "description": "Este tipo de site é para trabalhadores anonimos poderem divulgar os seus trabalhos",
+    "images": ["project-natours-1598912211724-1.jpg", "project-natours-1598912211724-2.jpg", "project-natours-1598912211724-3.jpg", 
+    "project-natours-1598912211727-4jpg", "project-natours-1598912211731-5.jpg", "project-natours-1598912211733-6.jpg",
+  "project-natours-1598912211734-7.jpg", "project-natours-1598912211734-8.jpg"],
+    "imageCover": "project-natours-1598912211724-1.jpg"
+  },
+  {
+    "name": "Nexter",
+    "nature": "web",
+    "techs": "Pug, Sass",
+    "link": "https://minhacasa.netlify.app",
+    "summary": "Serve para divulgar trabalho",
+    "description": "Este tipo de site é para trabalhadores anonimos poderem divulgar os seus trabalhos",
+    "images": ["project-nexter-1598912287856-1.jpg", "project-nexter-1598912287857-2.jpg", "project-nexter-1598912287857-3.jpg", 
+    "project-nexter-1598912287859-4.jpg", "project-nexter-1598912287862-5.jpg"],
+    "imageCover": "project-nexter-1598912287856-1.jpg"
+  },
+  {
+    "name": "Restaurante Chiza",
+    "nature": "web",
+    "techs": "Pug, Sass",
+    "link": "https://minhacasa.netlify.app",
+    "summary": "Serve para divulgar trabalho",
+    "description": "Este tipo de site é para trabalhadores anonimos poderem divulgar os seus trabalhos",
+    "images": ["project-restuarantechiza-1598912804858-2.jpg", "project-restuarantechiza-1598912804858-3.jpg", 
+      "project-restuarantechiza-1598912804859-4.jpg", 
+    "project-restuarantechiza-1598912804859-5.jpg", "project-restuarantechiza-1598912804859-6.jpg",
+  "project-restuarantechiza-1598912804860-7.jpg", "project-restuarantechiza-1598912804860-8.jpg"],
+    "imageCover": "project-restuarantechiza-1598912804858-2.jpg"
+  },
+  {
+    "name": "Scholão",
+    "nature": "web",
+    "techs": "Pug, Sass",
+    "link": "https://minhacasa.netlify.app",
+    "summary": "Serve para divulgar trabalho",
+    "description": "Este tipo de site é para trabalhadores anonimos poderem divulgar os seus trabalhos",
+    "images": ["project-scholão-1598912108307-1.jpg", "project-scholão-1598912108308-2.jpg", 
+      "project-scholão-1598912108310-3.jpg", 
+    "project-scholão-1598912108315-4.jpg", "project-scholão-1598912108316-5.jpg",
+  "project-scholão-1598912108317-6.jpg", "project-scholão-cover-1598912108145.jpg"],
+    "imageCover": "project-scholão-1598912108307-1.jpg"
+  }
+]
